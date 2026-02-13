@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/howler": "^2.0.2",
     "connect": "^3.6.2",
-    "serve-static": "^1.12.3"
+    "serve-static": "^1.12.3",
+    "typescript": "^5.9.3"
   }
 }

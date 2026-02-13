@@ -20,13 +20,10 @@ export class Ghost extends SimpleGhost implements IActor {
 
     private readonly _tile: Tile;
 
-    private _velocity: Vector2D;
-
     protected mover: GhostMover;
     protected directionLookup = new DirectionToIndexLookup();
 
     private _isMoving: boolean;
-    private _isAnimating: boolean;
 
     getChaseTarget: () => Point;
     getScatterTarget: () => Point;
@@ -76,7 +73,6 @@ export class Ghost extends SimpleGhost implements IActor {
     reset(): void {
         this.visible = true;
         this._isMoving = true;
-        this._isAnimating = true;
 
         this._state = GhostState.Normal;
         this._movementMode = GhostMovementMode.InHouse;
@@ -196,8 +192,6 @@ export class Ghost extends SimpleGhost implements IActor {
         // in the base class using super (though you can override the property).
 
         this._direction = directionInfo;
-
-        this._velocity = DirectionToIndexLookup.indexVectorFor(directionInfo.currentDirection).multiply(this.getSpeed());
     }
 
     get direction(): DirectionInfo {
@@ -228,7 +222,6 @@ export class Ghost extends SimpleGhost implements IActor {
     }
 
     stopAnimating(): void {
-        this._isAnimating = false;
     }
 
     update(context: GameContext): void {

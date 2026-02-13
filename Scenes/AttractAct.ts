@@ -7,7 +7,6 @@ import { StartButtonAct } from "./StartButtonAct";
 import { Engine } from "../Engine";
 import { ChaseSubAct } from "./ChaseSubAct";
 import { ActUpdateResult } from "./ActUpdateResult";
-import { AttractScenePacMan } from "./AttractScenePacMan";
 import { Act } from "./Act";
 
 /**
@@ -19,12 +18,10 @@ export class AttractAct extends Act {
 
     private readonly _powerDotLegend: PowerPill;
     private readonly _chaseSubAct: ChaseSubAct;
-    private readonly _pacMan: AttractScenePacMan;
     private readonly _blinky: SimpleGhost;
     private readonly _pinky: SimpleGhost;
     private readonly _inky: SimpleGhost;
     private readonly _clyde: SimpleGhost;
-    private readonly _gameContext: GameContext;
     private readonly _offScreenCanvas: Canvas;
 
     private readonly _pos = new Point(45, 65);
@@ -37,8 +34,6 @@ export class AttractAct extends Act {
 
         this._pos = new Point(45, 65);
 
-        this._gameContext = new GameContext();
-        this._pacMan = new AttractScenePacMan();
 
         this._powerDotLegend = new PowerPill();
         this._powerDotLegend.position = new Point(150, 250);

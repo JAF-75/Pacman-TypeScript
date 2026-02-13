@@ -19,8 +19,6 @@ export class Keyboard {
     private _keyPresses: IKeyEntry;
     private _buttonToKeyCodes: IKeyEntry;
 
-    private _currentKeyDown: number = 0;
-
     constructor() {
         this._keyPresses = {};
         this._buttonToKeyCodes = {
@@ -48,32 +46,27 @@ export class Keyboard {
     private _buttonDown = (e: any) => {
         const keyCode = this.mapButtonToKey(<string>e.detail);
         this._keys[keyCode] = true;
-        this._currentKeyDown = keyCode;
     }
 
     private _panned = (e: any) => {
         const keyCode = this.mapButtonToKey(<string>e.detail);
         this._keys.splice(0);
         this._keys[keyCode] = true;
-        this._currentKeyDown = keyCode;
     }
 
     private _buttonUp = (e: any) => {
         const keyCode = this.mapButtonToKey(<string>e.detail);
         delete this._keys[keyCode];
-        this._currentKeyDown = 0;
 
         this._keyPresses[keyCode.toString()] = window.performance.now();
     }
 
     private _keydown = (e: any) => {
         this._keys[e.keyCode] = true;
-        this._currentKeyDown = e.keyCode;
     }
 
     private _keyup = (e: any) => {
         delete this._keys[e.keyCode];
-        this._currentKeyDown = 0;
 
         this._keyPresses[e.keyCode.toString()] = window.performance.now();
     }

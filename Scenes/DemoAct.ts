@@ -59,6 +59,6 @@ export class DemoAct extends Act {
     }
 
     get nextAct(): Act {
-        return new AttractAct();
+        return this._nextAct;
     }
 }

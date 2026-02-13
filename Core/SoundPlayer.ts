@@ -1,6 +1,4 @@
-/// <reference types="howler"/>
-
-declare var Howl: any;
+import { Howl } from "howler";
 
 export class SoundPlayer {
 

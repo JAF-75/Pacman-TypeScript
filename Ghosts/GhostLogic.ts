@@ -6,7 +6,6 @@ import {DistanceAndDirection} from "./DistanceAndDirection";
 
 export class GhostLogic {
     private _lastDecisionMadeAt: Point;
-    private _lastDecisionMade: Direction;
 
     constructor(private readonly _maze: Maze, private readonly _ghost: Ghost) {
         this._lastDecisionMadeAt = new Point(-1, -1);
@@ -29,7 +28,6 @@ export class GhostLogic {
         const decision = this.calculateWhichWayToGo(nextTile, targetCell);
 
         this._lastDecisionMadeAt = cellPosition;
-        this._lastDecisionMade = decision;
 
         return decision;
     }
@@ -61,7 +59,7 @@ export class GhostLogic {
             return avail[0];
         } else {
             if (this._maze.isSpecialIntersection(cellPosition) && this._ghost.state === GhostState.Normal) {
-                const index: Direction = avail.indexOf(Direction.Up);
+                const index: number = avail.indexOf(Direction.Up);
 
                 // special intersection - remove Up from choices
                 if (index !== -1) {
