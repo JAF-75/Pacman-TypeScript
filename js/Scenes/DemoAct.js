@@ -56,7 +56,7 @@ define(["require", "exports", "../Core/_exports", "../Game/_exports", "./Attract
         };
         Object.defineProperty(DemoAct.prototype, "nextAct", {
             get: function () {
-                return new AttractAct_1.AttractAct();
+                return this._nextAct;
             },
             enumerable: false,
             configurable: true

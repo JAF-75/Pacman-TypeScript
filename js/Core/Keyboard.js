@@ -6,31 +6,25 @@ define(["require", "exports"], function (require, exports) {
         function Keyboard() {
             var _this = this;
             this._keys = new Array();
-            this._currentKeyDown = 0;
             this._buttonDown = function (e) {
                 var keyCode = _this.mapButtonToKey(e.detail);
                 _this._keys[keyCode] = true;
-                _this._currentKeyDown = keyCode;
             };
             this._panned = function (e) {
                 var keyCode = _this.mapButtonToKey(e.detail);
                 _this._keys.splice(0);
                 _this._keys[keyCode] = true;
-                _this._currentKeyDown = keyCode;
             };
             this._buttonUp = function (e) {
                 var keyCode = _this.mapButtonToKey(e.detail);
                 delete _this._keys[keyCode];
-                _this._currentKeyDown = 0;
                 _this._keyPresses[keyCode.toString()] = window.performance.now();
             };
             this._keydown = function (e) {
                 _this._keys[e.keyCode] = true;
-                _this._currentKeyDown = e.keyCode;
             };
             this._keyup = function (e) {
                 delete _this._keys[e.keyCode];
-                _this._currentKeyDown = 0;
                 _this._keyPresses[e.keyCode.toString()] = window.performance.now();
             };
             this._keyPresses = {};

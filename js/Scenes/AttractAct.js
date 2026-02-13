@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "../Game/_exports", "../Ghosts/_exports", "../Core/_exports", "./PlayerIntroAct", "./StartButtonAct", "../Engine", "./ChaseSubAct", "./ActUpdateResult", "./AttractScenePacMan", "./Act"], function (require, exports, _exports_1, _exports_2, _exports_3, PlayerIntroAct_1, StartButtonAct_1, Engine_1, ChaseSubAct_1, ActUpdateResult_1, AttractScenePacMan_1, Act_1) {
+define(["require", "exports", "../Game/_exports", "../Ghosts/_exports", "../Core/_exports", "./PlayerIntroAct", "./StartButtonAct", "../Engine", "./ChaseSubAct", "./ActUpdateResult", "./Act"], function (require, exports, _exports_1, _exports_2, _exports_3, PlayerIntroAct_1, StartButtonAct_1, Engine_1, ChaseSubAct_1, ActUpdateResult_1, Act_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AttractAct = void 0;
@@ -40,8 +40,6 @@ define(["require", "exports", "../Game/_exports", "../Ghosts/_exports", "../Core
                 }, 1500);
             };
             _this._pos = new _exports_3.Point(45, 65);
-            _this._gameContext = new _exports_3.GameContext();
-            _this._pacMan = new AttractScenePacMan_1.AttractScenePacMan();
             _this._powerDotLegend = new _exports_1.PowerPill();
             _this._powerDotLegend.position = new _exports_3.Point(150, 250);
             _this._powerDotLegend.visible = false;

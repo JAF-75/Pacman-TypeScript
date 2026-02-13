@@ -29,7 +29,6 @@ define(["require", "exports", "../Core/_exports"], function (require, exports, _
         __extends(ScoreSprite, _super);
         function ScoreSprite(position, amount) {
             var _this = _super.call(this, position, new _exports_1.Vector2D(ScoreSprite.scorePositions[amount.toString()].width, 7), new _exports_1.Point(ScoreSprite.scorePositions[amount.toString()].width / 2, 7 / 2), ScoreSprite.scorePositions[amount.toString()].pos) || this;
-            _this.position = position;
             if (_this.spriteSheetPos === undefined) {
                 throw new Error("Don't have a score for ".concat(amount));
             }

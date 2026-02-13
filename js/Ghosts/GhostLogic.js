@@ -19,7 +19,6 @@ define(["require", "exports", "../Game/_exports", "../Core/_exports", "./GhostSt
             var nextTile = currentTile.nextTileWrapped(this._ghost.direction.nextDirection);
             var decision = this.calculateWhichWayToGo(nextTile, targetCell);
             this._lastDecisionMadeAt = cellPosition;
-            this._lastDecisionMade = decision;
             return decision;
         };
         GhostLogic.prototype.calculateWhichWayToGo = function (tile, targetCell) {

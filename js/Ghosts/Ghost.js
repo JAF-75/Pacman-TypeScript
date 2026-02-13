@@ -96,7 +96,6 @@ define(["require", "exports", "../Core/_exports", "../Game/_exports", "./GhostEy
         Ghost.prototype.reset = function () {
             this.visible = true;
             this._isMoving = true;
-            this._isAnimating = true;
             this._state = GhostState_1.GhostState.Normal;
             this._movementMode = GhostMovementMode_1.GhostMovementMode.InHouse;
             this._whenInCenterOfNextTile = function () { };
@@ -181,7 +180,6 @@ define(["require", "exports", "../Core/_exports", "../Game/_exports", "./GhostEy
                 // a public method from a derived class, you can't access a property 
                 // in the base class using super (though you can override the property).
                 this._direction = directionInfo;
-                this._velocity = _exports_2.DirectionToIndexLookup.indexVectorFor(directionInfo.currentDirection).multiply(this.getSpeed());
             },
             enumerable: false,
             configurable: true
@@ -190,7 +188,6 @@ define(["require", "exports", "../Core/_exports", "../Game/_exports", "./GhostEy
             this._isMoving = false;
         };
         Ghost.prototype.stopAnimating = function () {
-            this._isAnimating = false;
         };
         Ghost.prototype.update = function (context) {
             _super.prototype.update.call(this, context);

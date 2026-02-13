@@ -1,10 +1,10 @@
-import { Howl } from "howler";
+declare var Howl: any;
 
 export class SoundPlayer {
 
     private _loaded: boolean;
 
-    private readonly _howl: Howl;
+    private readonly _howl: any;
 
     constructor(path: string, whenLoaded: () => void) {
 

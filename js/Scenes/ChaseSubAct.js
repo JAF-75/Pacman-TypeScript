@@ -32,7 +32,6 @@ define(["require", "exports", "../Game/_exports", "../Core/_exports", "../Ghosts
             this._ghostScore = 200;
             this._tempSprites = new _exports_1.TimedSpriteList();
             this._ghosts = [];
-            this._timers = [];
             var justOffScreen = new _exports_2.Point(250, 140);
             this._ghostEatenTimer = new _exports_2.EggTimer(0, function () { });
             this._ghostTimer = new _exports_2.EggTimer(5000, function () { _this.reverseChase(); });
