@@ -1,0 +1,1 @@
+{"version":3,"file":"GhostScatterMover.js","sourceRoot":"","sources":["../../Ghosts/GhostScatterMover.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;IAMA;;OAEG;IACH;QAAuC,qCAAU;QAE7C,2BAAY,KAAY,EAAE,IAAU;YAC5B,OAAA,MAAK,YAAC,KAAK,EAAE,qCAAiB,CAAC,OAAO,EAAE,IAAI,EAAE,KAAK,CAAC,gBAAgB,CAAC,SAAC;QAC9E,CAAC;QACL,wBAAC;IAAD,CAAC,AALD,CAAuC,uBAAU,GAKhD;IALY,8CAAiB"}
